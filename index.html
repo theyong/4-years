@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Four Years</title>
+	<meta name="viewport" content="initial-scale=1.0">
+	<meta charset="utf-8">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+	<script src="chart.js"></script>
+	<style type="text/css">
+		html,
+		body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		
+		#map {
+			height: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="header">
+		<h1>4</h1>
+		<h2 class="border">Years</h2>
+		<br>
+		<h3>A celebration of the places we've been
+			<br> and the people we've become.</h3>
+	</div>
+
+	<div class="container">
+		<h2 class="yellow">Conversations</h2>
+		<h3 class="subhead">How do we communicate?</h3>
+		<br>
+		<br>
+		<div class="frame" id="msgs">
+			<h2 class="mono">Messages Exchanged</h2>
+			<h3 class="mono">2012 - Present</h3>
+			<br>
+			<canvas id="msgChart" width="600" height="600"></canvas>
+		</div>
+
+		<div class="frame" id="stickers">
+			<h2 class="mono">Facebook Stickers Sent</h2>
+			<h3 class="mono">2014 - Present</h3>
+			<br>
+			<canvas id="stickersChart" width="600" height="400"></canvas>
+		</div>
+	</div>
+
+	<div class="container">
+		<h2 class="yellow">Travels</h2>
+		<h3 class="subhead">Where have we gone?</h3>
+		<br>
+		<br>
+		<div class="frame" id="US_Map">
+			<h2 class="mono">Where We've Been</h2>
+			<h3 class="mono">Location + Duration</h3>
+			<br>
+			<div id="usMap"></div>
+			<div>
+				<table style="max-width: 500px;">
+					<tr style='border-bottom: 2px #fff solid;'>
+						<td style="font-size:20px; color:#F7E9AE;">Location</td>
+						<td style="font-size:20px; color:#F7E9AE;">Duration</td>
+					</tr>
+					<tr>
+						<td class="tdMaps">Los Angeles</td>
+						<td class="tdMaps">29 months
+					</tr>
+					<tr>
+						<td class="tdMaps">Ann Arbor</td>
+						<td class="tdMaps">24 months</td>
+					</tr>
+					<tr>
+						<td class="tdMaps">Bay Area</td>
+						<td class="tdMaps">11 days</td>
+					</tr>
+					<tr>
+						<td class="tdMaps">New York City</td>
+						<td class="tdMaps">10 days</td>
+					</tr>
+					<tr>
+						<td class="tdMaps">Boston</td>
+						<td class="tdMaps">5 days</td>
+					</tr>
+					<tr>
+						<td class="tdMaps">Providence</td>
+						<td class="tdMaps">3 days</td>
+					</tr>
+					<tr>
+						<td class="tdMaps">Northern Michigan</td>
+						<td class="tdMaps">3 days</td>
+					</tr>
+					<tr>
+						<td class="tdMaps">Detroit</td>
+						<td class="tdMaps">1 day</td>
+					</tr>
+				</table>
+				<br>
+			</div>
+		</div>
+		<div class="frame" id="LA_map">
+			<h2 class="mono">Frequented Locations</h2>
+			<h3 class="mono">Los Angeles, CA</h3>
+			<br>
+			<div id="laMap"></div>
+			<div>
+				<table style="max-width: 800px;">
+					<tr style='border-bottom: 2px #fff solid;'>
+						<td style="font-size:20px; color:#F7E9AE;">Name</td>
+						<td style="font-size:20px; color:#F7E9AE;">Description</td>
+						<td style="font-size:20px; color:#F7E9AE;">Location</td>
+					</tr>
+					<tr>
+						<td class="tdMaps">Mandarin Deli</td>
+						<td class="tdMaps">Beef Noodle Soup</td>
+						<td class="tdMaps">Northridge</td>
+					</tr>
+					<tr>
+						<td class="tdMaps">Pizza Rev</td>
+						<td class="tdMaps">Custom Pizza</td>
+						<td class="tdMaps">Northridge</td>
+					</tr>
+					<tr>
+						<td class="tdMaps">In-N-Out</td>
+						<td class="tdMaps">Burgers</td>
+						<td class="tdMaps">Porter Ranch</td>
+					</tr>
+					<tr>
+						<td class="tdMaps">Versailles</td>
+						<td class="tdMaps">Chicken</td>
+						<td class="tdMaps">Ventura</td>
+					</tr>
+					<tr>
+						<td class="tdMaps">Sprinkles</td>
+						<td class="tdMaps">Cupcakes</td>
+						<td class="tdMaps">Beverly Hills</td>
+					</tr>
+					<tr>
+						<td class="tdMaps">Shin-Sen-Gumi</td>
+						<td class="tdMaps">Ramen</td>
+						<td class="tdMaps">Downtown</td>
+					</tr>
+				</table>
+				<br>
+			</div>
+		</div>
+		<div class="frame" id="AA_map">
+			<h2 class="mono">Frequented Locations</h2>
+			<h3 class="mono">Ann Arbor, MI</h3>
+			<br>
+			<div id="aaMap"></div>
+			<div>
+				<table style="max-width: 800px;">
+					<tr>
+						<td style="font-size:20px; color:#F7E9AE;">2012-2013</td>
+						<td style="font-size:20px; color:#EDC61E;">2013-2014</td>
+						<td style="font-size:20px; color:#CCAC1C;">2014-2015</td>
+					</tr>
+					<tr>
+						<td class="tdMaps">Insomnia</td>
+						<td class="tdMaps">North Quad</td>
+						<td class="tdMaps">TeaHaus</td>
+					</tr>
+					<tr>
+						<td class="tdMaps">MoJo Dining Hall</td>
+						<td class="tdMaps">Ayaka</td>
+						<td class="tdMaps">Panera Bread</td>
+					</tr>
+					<tr>
+						<td class="tdMaps">Victor's</td>
+						<td class="tdMaps">Noodles & Co.</td>
+						<td class="tdMaps">Potbelly</td>
+					</tr>
+					<tr>
+						<td class="tdMaps">Hideaway</td>
+						<td class="tdMaps">Totoro</td>
+						<td class="tdMaps">Taste of India</td>
+					</tr>
+					<tr>
+						<td class="tdMaps"></td>
+						<td class="tdMaps">Tomokun</td>
+						<td class="tdMaps">Frank's</td>
+					</tr>
+					<tr>
+						<td class="tdMaps"></td>
+						<td class="tdMaps">Brueggers</td>
+						<td class="tdMaps">Silvios</td>
+					</tr>
+				</table>
+				<br>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<h2 class="yellow">Dynamics</h2>
+		<h3 class="subhead">What's our relationship like?</h3>
+		<br>
+		<br>
+		<div class="frame" id="disagree">
+			<h2 class="mono">Frequent Points of Conflict</h2>
+			<h3 class="mono">Things we'll never agree on</h3>
+			<table>
+				<tr>
+					<td></td>
+					<td style="font-size:20px; color:#F7E9AE;">Lawrence</td>
+					<td style="font-size:20px; color:#F7E9AE;">Mel J</td>
+				</tr>
+				<tr>
+					<td class="categories">Working
+						<br>Environments</td>
+					<td>Busy/active
+						<br>Bar for standing</td>
+					<td>Quiet, isolated
+						<br>Sitting preferred</td>
+				</tr>
+				<tr>
+					<td class="categories">Amount of
+						<br>Affection</td>
+					<td>Little to none</td>
+					<td>A lot</td>
+				</tr>
+				<tr>
+					<td class="categories">Korean food</td>
+					<td>Would eat weekly</td>
+					<td>Doesn't like smelling bad</td>
+				</tr>
+				<tr>
+					<td class="categories">Shopping habits</td>
+					<td>Almost never</td>
+					<td>Frequent</td>
+				</tr>
+			</table>
+		</div>
+		<div class="frame" id="quotes">
+			<h2 class="mono">Frequent Quotes</h2>
+			<h3 class="mono">Our relationship distilled into sound bites</h3>
+
+			<table class="quotes">
+				<tr class="mel">
+					<td>M</td>
+					<td>&ldquo;Can we cuddle?&rdquo;</td>
+				</tr>
+				<tr class="law">
+					<td class="singleQuote">L</td>
+					<td class="singleQuote">&ldquo;No.&rdquo;</td>
+				</tr>
+				<tr class="law">
+					<td>L</td>
+					<td>&ldquo;Can we get boba?&rdquo;</td>
+				</tr>
+				<tr class="mel">
+					<td class="singleQuote">M</td>
+					<td class="singleQuote">&ldquo;No.&rdquo;</td>
+				</tr>
+				<tr class="mel">
+					<td class="singleQuote">M</td>
+					<td class="singleQuote">&ldquo;Did you just fart?&rdquo;</td>
+				</tr>
+				<tr class="law">
+					<td class="singleQuote">L</td>
+					<td class="singleQuote">&ldquo;It's so hoooooot&rdquo;</td>
+				</tr>
+				<tr class="mel">
+					<td class="singleQuote">M</td>
+					<td class="singleQuote">&ldquo;I'm gonna punch you in the face.&rdquo;</td>
+				</tr>
+				<tr class="mel">
+					<td>M</td>
+					<td>(asks something logistical)</td>
+				</tr>
+				<tr class="law">
+					<td>L</td>
+					<td>&ldquo;I don't know&rdquo;</td>
+				</tr>
+			</table>
+			<br>
+			<br>
+			<br>
+		</div>
+
+	</div>
+	<div class="container">
+		<h2 class="yellow">History</h2>
+		<h3 class="subhead">How did we get to where we are?</h3>
+		<br>
+		<br>
+		<div class="frame" id="timline">
+			<h2 class="mono">A Timeline</h2>
+			<h3 class="mono">An encapsulation of important moments</h3>
+			<br>
+			<br>
+
+			<h1 class="timelineH1">2010</h1>
+			<ul class="cbp_tmtimeline">
+				<li>
+					<time class="cbp_tmtime"><span>Jun</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">06 June 2010</p>
+						<h2 class="timelineH2">ASB Summer Transition Academy</h2>
+						<br>
+						<br>
+					</div>
+				</li>
+				<li>
+					<time class="cbp_tmtime"><span>Dec</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">02 Dec 2010</p>
+						<h2 class="timelineH2">CPK + Tangled</h2>
+						<br>
+						<br>
+					</div>
+				</li>
+			</ul>
+			<h1 class="timelineH1">2011</h1>
+			<ul class="cbp_tmtimeline">
+				<li>
+					<time class="cbp_tmtime"><span>Jun</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">20 June 2011</p>
+						<h2 class="timelineH2">Six Flags</h2>
+						<br>
+						<br>
+					</div>
+				</li>
+				<li>
+					<time class="cbp_tmtime"><span>Jun</span>
+					</time>
+					<div class="cbp_tmicon" style="background: #FFE15C;"></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP" style="color:#FFE15C;">13 Sep 2011</p>
+						<h2 class="timelineH2" style="color:#FFE15C;">Started dating</h2>
+						<br>
+						<br>
+					</div>
+				</li>
+				<li>
+					<time class="cbp_tmtime"><span>Oct</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">16 Oct 2011</p>
+						<h2 class="timelineH2">Homecoming</h2>
+						<br>
+						<div class="timelineIMG">
+							<img src="img/homecoming.jpg" style="width: 100%;">
+						</div>
+					</div>
+				</li>
+			</ul>
+			<h1 class="timelineH1">2012</h1>
+			<ul class="cbp_tmtimeline">
+				<li>
+					<time class="cbp_tmtime"><span>Feb</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">12 Feb 2012</p>
+						<h2 class="timelineH2">Winter Formal</h2>
+						<br>
+						<div class="timelineIMG">
+							<img src="img/winterformal.jpg" style="width: 100%;">
+						</div>
+						<br>
+						<br>
+					</div>
+				</li>
+				<li>
+					<time class="cbp_tmtime"><span>May</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">13 May 2012</p>
+						<h2 class="timelineH2">Prom</h2>
+						<br>
+						<div class="timelineIMG">
+							<img src="img/prom.jpg" style="width: 100%;">
+						</div>
+						<br>
+						<br>
+					</div>
+				</li>
+				<li>
+					<time class="cbp_tmtime"><span>Jun</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">06 June 2012</p>
+						<h2 class="timelineH2">Accepted into Michigan</h2>
+						<br>
+						<br>
+					</div>
+				</li>
+				<li>
+					<time class="cbp_tmtime"><span>Oct</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">28 Oct 2012</p>
+						<h2 class="timelineH2">The long hair dies</h2>
+						<br>
+						<div class="timelineIMG">
+							<img src="img/shorthair.jpg" style="width: 100%;">
+						</div>
+						<br>
+						<br>
+					</div>
+				</li>
+				<li>
+					<time class="cbp_tmtime"><span>Nov</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">23 Nov 2012</p>
+						<h2 class="timelineH2">Visiting Tabs @ RISD</h2>
+						<br>
+						<div class="timelineIMG">
+							<img src="img/risd.jpg" style="width: 100%;">
+						</div>
+						<br>
+						<br>
+					</div>
+				</li>
+			</ul>
+			<h1 class="timelineH1">2013</h1>
+			<ul class="cbp_tmtimeline">
+				<li>
+					<time class="cbp_tmtime"><span>Jan</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">28 Jan 2013</p>
+						<h2 class="timelineH2">Nigel the Narwhal</h2>
+						<br>
+						<div class="timelineIMG">
+							<img src="img/nigel.jpg" style="width: 100%;">
+						</div>
+						<br>
+						<br>
+					</div>
+				</li>
+				<li>
+					<time class="cbp_tmtime"><span>Mar</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">15 Mar 2013</p>
+						<h2 class="timelineH2">Mel J turns into an emoji</h2>
+						<br>
+						<div class="timelineIMG">
+							<img src="img/emoj.JPG" style="width: 100%;">
+						</div>
+						<br>
+						<br>
+					</div>
+				</li>
+				<li>
+					<time class="cbp_tmtime"><span>Aug</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">23 Aug 2013</p>
+						<h2 class="timelineH2">Mel J falls in love with a wall</h2>
+						<br>
+						<div class="timelineIMG">
+							<img src="img/wall.jpg" style="width: 100%;">
+						</div>
+						<br>
+						<br>
+					</div>
+				</li>
+				<li>
+					<time class="cbp_tmtime"><span>Sep</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">12 Sep 2013</p>
+						<h2 class="timelineH2">First attempted suffocation</h2>
+						<br>
+						<div class="timelineIMG">
+							<img src="img/suffocate.jpg" style="width: 100%;">
+						</div>
+						<br>
+						<br>
+					</div>
+				</li>
+				<li>
+					<time class="cbp_tmtime"><span>Nov</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">29 Nov 2013</p>
+						<h2 class="timelineH2">Mel J in Gap's fall collection</h2>
+						<br>
+						<div class="timelineIMG">
+							<img src="img/gap.jpg" style="width: 100%;">
+						</div>
+						<br>
+						<br>
+					</div>
+				</li>
+			</ul>
+			<h1 class="timelineH1">2014</h1>
+			<ul class="cbp_tmtimeline">
+				<li>
+					<time class="cbp_tmtime"><span>Feb</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">22 Feb 2014</p>
+						<h2 class="timelineH2">Mel J + Lawrence merge into one being</h2>
+						<br>
+						<div class="timelineIMG">
+							<img src="img/unity.jpg" style="width: 100%;">
+						</div>
+						<br>
+						<br>
+					</div>
+				</li>
+				<li>
+					<time class="cbp_tmtime"><span>Mar</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">19 Mar 2014</p>
+						<h2 class="timelineH2">Mel J grows a beard</h2>
+						<br>
+						<div class="timelineIMG">
+							<img src="img/beard.png" style="width: 100%;">
+						</div>
+						<br>
+						<br>
+					</div>
+				</li>
+				<li>
+					<time class="cbp_tmtime"><span>Apr</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">04 Apr 2014</p>
+						<h2 class="timelineH2">And becomes a strawberry</h2>
+						<br>
+						<div class="timelineIMG">
+							<img src="img/strawberry.png" style="width: 100%;">
+						</div>
+						<br>
+						<br>
+					</div>
+				</li>
+				<li>
+					<time class="cbp_tmtime"><span>Jul</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">04 Jul 2014</p>
+						<h2 class="timelineH2">A scientific experiment goes horribly wrong</h2>
+						<br>
+						<div class="timelineIMG">
+							<img src="img/experiment.jpg" style="width: 100%;">
+						</div>
+						<br>
+						<br>
+					</div>
+				</li>
+				<li>
+					<time class="cbp_tmtime"><span>Dec</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">09 Dec 2014</p>
+						<h2 class="timelineH2">Mel J joins a gang</h2>
+						<br>
+						<div class="timelineIMG">
+							<img src="img/gang.jpg" style="width: 100%;">
+						</div>
+						<br>
+						<br>
+					</div>
+				</li>
+				<li>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">16 Dec 2014</p>
+						<h2 class="timelineH2">Meme J</h2>
+						<br>
+						<div class="timelineIMG">
+							<img src="img/memej.jpg" style="width: 100%;">
+						</div>
+						<br>
+						<br>
+					</div>
+				</li>
+			</ul>
+			<h1 class="timelineH1">2015</h1>
+			<ul class="cbp_tmtimeline">
+				<li>
+					<time class="cbp_tmtime"><span>Jun</span>
+					</time>
+					<div class="cbp_tmicon "></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP">10 Jun 2015</p>
+						<h2 class="timelineH2">Mel J starts dating a vacuum</h2>
+						<br>
+						<div class="timelineIMG">
+							<img src="img/vacuum.JPG" style="width: 100%;">
+						</div>
+						<br>
+						<br>
+					</div>
+				</li>
+				<li>
+					<time class="cbp_tmtime"><span>Sep</span>
+					</time>
+					<div class="cbp_tmicon" style="background: #FFE15C;"></div>
+					<div class="cbp_tmlabel">
+						<p class="timelineP" style="color:#FFE15C;">13 Sep 2015</p>
+						<h2 class="timelineH2" style="color:#FFE15C; font-size: 48px;">Today</h2>
+					</div>
+				</li>
+			</ul>
+			<br>
+			<br>
+		</div>
+		<br>
+		<br>
+		<br>
+	</div>
+
+	<div class="footer">
+		<div class="container" style="text-align: left; max-width: 700px;">
+			<h2 style="padding: 0px; letter-spacing: 1px; font-size: 48px; padding-bottom: 10px; border-bottom: 8px solid; color: #4a4a4a;">Dear Mel J.</h2>
+			<h3 style="font-size: 24px; line-height: 44px;">We say this to each other all the time, but we've really come a long way. From being tiny little juniors at Granada in ASB to being seniors, uncertain about our futures, to being freshmen and trying to figure this whole "college" thing out together, to where we are now, having this faith become something real to us.. man. There is no way ANYONE could have forseen the progression of our relationship.</h3>
+			<h3 style="font-size: 24px; line-height: 44px;">Yet through it all, I'm so thankful to have gone through so much of life with you. I'm so thankful to have someone to depend on during times of intense loneliness and insecurity, to have someone with whom I can share moments of pure joy, to have someone that I can get excited about things with, and to have a friend that I can be derpy with. Mel J, you are my best friend.</h3>
+			<h3 style="font-size: 24px; line-height: 44px;">Sweetheart, I love you so much. I'm consistently encouraged and inspired by your heart – thank you so much for loving me, and I am so excited to see how God works in our relationship, and how he will inevitably work in your life. Thank you for including me as you go through life, and for being there for me. I luz ya. Happy annibirthary & shizz. K bye.</h3>
+		</div>
+	</div>
+
+	<script>
+		var messageData = {
+			labels: ["Facebook", "SMS", "iMessage"],
+			datasets: [
+				{
+					fillColor: "rgba(248,233,174,0.5)",
+					strokeColor: "#F7E9AE",
+					highlightFill: "rgba(253,207,0,0.5)",
+					highlightStroke: "#FDCF00",
+					data: [5945, 13266, 20155]
+			}
+		]
+		};
+		var stickerData = {
+			labels: ["Tuzki", "Pusheen", "Cactus"],
+			datasets: [
+				{
+					fillColor: "rgba(248,233,174,0.5)",
+					strokeColor: "#F7E9AE",
+					highlightFill: "rgba(253,207,0,0.5)",
+					highlightStroke: "#FDCF00",
+					data: [258, 72, 24]
+			}
+		]
+		};
+		window.onload = function () {
+			var msgChart = document.getElementById("msgChart").getContext("2d");
+			window.messageChart = new Chart(msgChart).Bar(messageData, {
+				scaleShowGridLines: false,
+				scaleShowVerticalLines: false,
+				scaleShowHorizontalLines: false,
+				showScale: true,
+				scaleFontFamily: "'akkurat-mono', monospace",
+				scaleFontSize: 16,
+				showTooltips: true,
+				tooltipFontFamily: "'akkurat-mono', monospace",
+				tooltipXOffset: 0,
+				tooltipFontColor: "#FDCF00",
+				scaleShowLabels: true,
+				barStrokeWidth: 4,
+				barValueSpacing: 10,
+			});
+			var stickers = document.getElementById("stickersChart").getContext("2d");
+			window.stickerChart = new Chart(stickers).Bar(stickerData, {
+				scaleShowGridLines: false,
+				scaleShowVerticalLines: false,
+				scaleShowHorizontalLines: false,
+				showScale: true,
+				scaleFontFamily: "'akkurat-mono', monospace",
+				scaleFontSize: 16,
+				showTooltips: true,
+				tooltipFontFamily: "'akkurat-mono', monospace",
+				tooltipXOffset: 0,
+				tooltipFontColor: "#FDCF00",
+				tooltipFontSize: 20,
+				scaleShowLabels: true,
+				barStrokeWidth: 2,
+				barValueSpacing: 5,
+			});
+		}
+	</script>
+
+	<script>
+		var usCities = {
+			losangeles: {
+				center: {
+					lat: 34.0204989,
+					lng: -118.4117325
+				},
+				days: 882,
+				name: "Los Angeles"
+			},
+			annarbor: {
+				center: {
+					lat: 42.2733204,
+					lng: -83.7376894
+				},
+				days: 730,
+				name: "Ann Arbor"
+			},
+			sanfran: {
+				center: {
+					lat: 37.7577,
+					lng: -122.4376
+				},
+				days: 11,
+				name: "San Francisco"
+			},
+			newyork: {
+				center: {
+					lat: 40.7033127,
+					lng: -73.979681
+				},
+				days: 10,
+				name: "New York City"
+			},
+			boston: {
+				center: {
+					lat: 42.3133735,
+					lng: -71.0571571
+				},
+				days: 5,
+				name: "Boston"
+			},
+			rhodeisland: {
+				center: {
+					lat: 41.825407,
+					lng: -71.4000585
+				},
+				days: 3,
+				name: "Providence"
+			},
+			sleepingbear: {
+				center: {
+					lat: 44.8840923,
+					lng: -86.0477309
+				},
+				days: 3,
+				name: "Sleeping Bear Dunes"
+			},
+			detroit: {
+				center: {
+					lat: 42.352711,
+					lng: -83.099205
+				},
+				days: 1,
+				name: "Detroit"
+			}
+		};
+
+		var laPlaces = {
+			shinsengumi: {
+				center: {
+					lat: 34.048276,
+					lng: -118.239036
+				},
+				name: "Shin-Sen-Gumi"
+			},
+			pizzarev: {
+				center: {
+					lat: 34.2417424,
+					lng: -118.5357371
+				},
+				name: "Pizza Rev"
+			},
+			mandarindeli: {
+				center: {
+					lat: 34.2394085,
+					lng: -118.5363159
+				},
+				name: "Mandarin Deli"
+			},
+			innout: {
+				center: {
+					lat: 34.275803,
+					lng: -118.568066
+				},
+				name: "In-N-Out"
+			},
+			versailles: {
+				center: {
+					lat: 34.1608821,
+					lng: -118.512147
+				},
+				name: "Versailles"
+			},
+			sprinkles: {
+				center: {
+					lat: 34.0696626,
+					lng: -118.4061758
+				},
+				name: "Sprinkles"
+			}
+		};
+
+		var aa2012 = {
+			insomnia: {
+				center: {
+					lat: 42.2751919,
+					lng: -83.7335709
+				},
+				name: "Insomnia"
+			},
+			mojo: {
+				center: {
+					lat: 42.2800527,
+					lng: -83.7314824
+				},
+				name: "MoJo"
+			},
+			hideaway: {
+				center: {
+					lat: 42.2809086,
+					lng: -83.7288433
+				},
+				name: "Hideaway"
+			}
+		};
+
+		var aa2013 = {
+			nq: {
+				center: {
+					lat: 42.280738,
+					lng: -83.7401718
+				},
+				name: "North Quad"
+			},
+			ayaka: {
+				center: {
+					lat: 42.2751467,
+					lng: -83.734288
+				},
+				name: "Ayaka"
+			},
+			noodles: {
+				center: {
+					lat: 42.2786264,
+					lng: -83.7410279
+				},
+				name: "Noodles & Co."
+			},
+			totoro: {
+				center: {
+					lat: 42.2797894,
+					lng: -83.7404945
+				},
+				name: "Totoro"
+			},
+			tomokun: {
+				center: {
+					lat: 42.2795633,
+					lng: -83.7427708
+				},
+				name: "Tomokun"
+			},
+			brueggers: {
+				center: {
+					lat: 42.2787737,
+					lng: -83.7403157
+				},
+				name: "Brueggers"
+			}
+		};
+
+		var aa2014 = {
+			teahaus: {
+				center: {
+					lat: 42.282578,
+					lng: -83.7469648
+				},
+				name: "TeaHaus"
+			},
+			panera: {
+				center: {
+					lat: 42.278809,
+					lng: -83.73975
+				},
+				name: "Panera"
+			},
+			potbelly: {
+				center: {
+					lat: 42.279226,
+					lng: -83.741027
+				},
+				name: "Potbelly"
+			},
+			taste: {
+				center: {
+					lat: 42.2796871,
+					lng: -83.7404752
+				},
+				name: "Taste of India"
+			},
+			silvios: {
+				center: {
+					lat: 42.278842,
+					lng: -83.7400256
+				},
+				name: "Silvios"
+			},
+			franks: {
+				center: {
+					lat: 42.2782356,
+					lng: -83.7422548
+				},
+				name: "Frank's"
+			}
+		};
+
+		function initMap() {
+			var customMapType = new google.maps.StyledMapType([{
+				"elementType": "geometry",
+				"stylers": [{
+					"visibility": "on"
+				}, {
+					"saturation": -100
+				}, {
+					"gamma": 2.01
+				}]
+			}, {
+				"elementType": "labels.text.fill",
+				"stylers": [{
+					"saturation": -100
+				}]
+  }, {
+				"elementType": "labels.icon",
+				"stylers": [{
+					"saturation": -100
+					}]
+	}, {
+				"featureType": "administrative.province",
+				"elementType": "geometry.stroke",
+				"stylers": [{
+					"lightness": -43
+				}, {
+					"weight": 0.6
+				}, {
+					"gamma": 0.11
+				}]
+			}, {
+				"featureType": "water",
+				"elementType": "geometry.fill",
+				"stylers": [{
+					"weight": 0.4
+				}, {
+					"gamma": 0.35
+				}]
+			}], {
+				name: 'Custom Style'
+			});
+			var customMapTypeId = 'custom_style';
+
+			var usMap = new google.maps.Map(document.getElementById('usMap'), {
+				center: {
+					lat: 37.6,
+					lng: -95.665
+				},
+				zoom: 4,
+				streetViewControl: false,
+				scrollwheel: false,
+			});
+
+			usMap.mapTypes.set(customMapTypeId, customMapType);
+			usMap.setMapTypeId(customMapTypeId);
+
+			for (var city in usCities) {
+				var cityCircle = new google.maps.Circle({
+					strokeColor: '#FDCF00',
+					strokeOpacity: 0.8,
+					strokeWeight: 2,
+					fillColor: '#FDCF00',
+					fillOpacity: 0.5,
+					map: usMap,
+					center: usCities[city].center,
+					radius: Math.sqrt(usCities[city].days) * 10000
+				});
+			}
+
+			var laMap = new google.maps.Map(document.getElementById('laMap'), {
+				center: {
+					lat: 34.162091,
+					lng: -118.437138
+				},
+				zoom: 11,
+				streetViewControl: false,
+				scrollwheel: false,
+			});
+
+			laMap.mapTypes.set(customMapTypeId, customMapType);
+			laMap.setMapTypeId(customMapTypeId);
+
+			for (var place in laPlaces) {
+				var placeCircle = new google.maps.Circle({
+					strokeColor: '#FDCF00',
+					strokeOpacity: 0.8,
+					strokeWeight: 2,
+					fillColor: '#FDCF00',
+					fillOpacity: 0.5,
+					map: laMap,
+					center: laPlaces[place].center,
+					radius: 1000
+				});
+			}
+
+			var aaMap = new google.maps.Map(document.getElementById('aaMap'), {
+				center: {
+					lat: 42.278099,
+					lng: -83.737926
+				},
+				zoom: 16,
+				streetViewControl: false,
+				scrollwheel: false,
+			});
+
+			aaMap.mapTypes.set(customMapTypeId, customMapType);
+			aaMap.setMapTypeId(customMapTypeId);
+
+			for (var place in aa2012) {
+				var placeCircle = new google.maps.Circle({
+					strokeColor: '#F7E9AE',
+					strokeOpacity: 1,
+					strokeWeight: 2,
+					fillColor: '#F7E9AE',
+					fillOpacity: 0.9,
+					map: aaMap,
+					center: aa2012[place].center,
+					radius: 20
+				});
+			}
+			for (var place in aa2013) {
+				var placeCircle = new google.maps.Circle({
+					strokeColor: '#EDC61E',
+					strokeOpacity: 0.8,
+					strokeWeight: 2,
+					fillColor: '#EDC61E',
+					fillOpacity: 0.5,
+					map: aaMap,
+					center: aa2013[place].center,
+					radius: 20
+				});
+			}
+			for (var place in aa2014) {
+				var placeCircle = new google.maps.Circle({
+					strokeColor: '#CCAC1C',
+					strokeOpacity: 0.8,
+					strokeWeight: 2,
+					fillColor: '#CCAC1C',
+					fillOpacity: 0.5,
+					map: aaMap,
+					center: aa2014[place].center,
+					radius: 20
+				});
+			}
+
+		}
+	</script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key= AIzaSyDqUknWXI913AshB5GvWhjDmQDZtJK5eWM&callback=initMap"></script>
+
+</body>
+
+
+</html>
